@@ -12,6 +12,18 @@
             count: 0
         };
      }
+    //  Lifecycle methods
+    componentDidMount(){
+        const value = localStorage.getItem('count');
+        const count = parseInt(value);
+        if(!isNaN(count)){
+            this.setState(() => ({ count }));
+        }
+    }
+    componentDidUpdate(prevProps, prevState){
+        const value = this.state.count;
+        localStorage.setItem('count', value);
+    }
     //  methods
     handleAddOne(e) {
         e.preventDefault();

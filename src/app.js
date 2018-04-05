@@ -12,6 +12,16 @@ class IndecisonApp extends React.Component {
         this.handleAddOption = this.handleAddOption.bind(this);
         this.handleDeleteOption = this.handleDeleteOption.bind(this);
     }
+    // Life Cycle methods 
+    componentDidMount(){
+        console.log('componentDidMount');
+    }
+    componentDidUpdate(){
+        console.log('componentDidUpdate');
+    }
+    componentWillUnmount(){
+        console.log('componentWillUnmount');
+    }
     // handleDeleteOptions method for Options
     handleDeleteOptions(){
         this.setState(() => ({options: []}));

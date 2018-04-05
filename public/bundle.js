@@ -79,7 +79,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _person_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./person.js */ \"./src/person.js\");\n// ES6 imports and exports\n\nconsole.log('app.js running');\n\nconsole.log(Object(_person_js__WEBPACK_IMPORTED_MODULE_0__[\"isAdult\"])(21));\nconsole.log(Object(_person_js__WEBPACK_IMPORTED_MODULE_0__[\"canDrink\"])(22));\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _person__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./person */ \"./src/person.js\");\n/* harmony import */ var _util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util */ \"./src/util.js\");\n// ES6 imports and exports\n\n// importing default export from a module\n\nconsole.log('app.js running');\n\nconsole.log(Object(_person__WEBPACK_IMPORTED_MODULE_0__[\"isAdult\"])(21));\nconsole.log(Object(_person__WEBPACK_IMPORTED_MODULE_0__[\"canDrink\"])(22));\n\nconsole.log(`subtraction: ${Object(_util__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(1,2)}`);\nconsole.log(`add: ${Object(_util__WEBPACK_IMPORTED_MODULE_1__[\"add\"])(1,2)}`);\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ }),
 
@@ -92,6 +92,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _per
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"isAdult\", function() { return isAdult; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"canDrink\", function() { return canDrink; });\n// ES6 exports and imports\nconsole.log('person file running');\n\nconst isAdult = (age) => {\n    if(age >18){\n        return `The person is an adult`;\n    }\n};\n\nconst canDrink = (age) => {\n    if(age > 21){\n        return `The person can drink`;\n    }\n};\n\n// export the functions - default export or named exports\n\n\n\n\n//# sourceURL=webpack:///./src/person.js?");
+
+/***/ }),
+
+/***/ "./src/util.js":
+/*!*********************!*\
+  !*** ./src/util.js ***!
+  \*********************/
+/*! exports provided: add, square, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"add\", function() { return add; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"square\", function() { return square; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return subtract; });\n// ES6 exports and imports\nconsole.log('util.js running');\n\n//Named exports\n//syntax ->  1. export const <name> = <body> ; inline\n//           2. export { name1, name2 ,...}\n\n// Default exports\n// syntax -> 1. export { name1, name2, name3 as default}; name3 is default\n//           2. export default name3; \n// Note: export default cannot be given to const..etc in inline\n\nconst add = (x, y) => x+y;\nconst square = (x) => x*x;\nconst subtract = (x, y) => x-y;\n\n\n\n\n//# sourceURL=webpack:///./src/util.js?");
 
 /***/ })
 

@@ -57,9 +57,7 @@ var IndecisonApp = function (_React$Component) {
                 return 'This option already exists';
             }
             this.setState(function (prevState) {
-                return {
-                    options: prevState.options.concat(option)
-                };
+                return { options: prevState.options.concat(option) };
             });
         }
     }, {
@@ -167,9 +165,7 @@ var AddOption = function (_React$Component2) {
             var option = e.target.elements.option.value.trim();
             var error = this.props.handleAddOption(option);
             this.setState(function () {
-                return {
-                    error: error
-                };
+                return { error: error };
             });
         }
     }, {

@@ -49,48 +49,41 @@ class IndecisonApp extends React.Component {
         );
     }
 }
+// stateless Header component
+const Header = (props) =>{
+    return (
+        <div>
+            <h1>{props.title}</h1>
+            <h3>{props.subtitle}</h3>
+        </div>
+    );
+};
 
-class Header extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>{this.props.title}</h1>
-                <h3>{this.props.subtitle}</h3>
-            </div>
-        );
-    }
+// stateless Action component
+const Action = (props) => {
+    return (
+        <div>
+            <button disabled={!props.hasOptions}
+                    onClick={props.handlePick}>What should I do?</button>
+        </div>
+    );
 }
-
-class Action extends React.Component {
-    render() {
-        return (
-            <div>
-                <button disabled={!this.props.hasOptions}
-                        onClick={this.props.handlePick}>What should I do?</button>
-            </div>
-        );
-    }
+// stateless Options component
+const Options = (props) => {
+    return (
+        <div>
+            { props.options.map((option) => <Option key={option} optionText={option}></Option> ) }
+            <button onClick={props.handleDeleteOptions}>Remove All</button>
+        </div>
+    );
 }
-
-class Options extends React.Component {
-    render() {
-        return (
-            <div>
-                { this.props.options.map((option) => <Option key={option} optionText={option}></Option> ) }
-                <button onClick={this.props.handleDeleteOptions}>Remove All</button>
-            </div>
-        );
-    }
-}
-
-class Option extends React.Component {
-    render() {
-        return (
-            <ul>
-               <li> {this.props.optionText} </li>
-            </ul>
-        );
-    }
+// stateless Option Component
+const Option = (props) => {
+    return (
+        <ul>
+           <li> {props.optionText} </li>
+        </ul>
+    );
 }
 
 class AddOption extends React.Component {

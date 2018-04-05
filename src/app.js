@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import IndecisonApp from './components/IndecisonApp';
 
-const template = <p>A paragaph using jsx</p>
-ReactDOM.render(template, document.querySelector('#app'));
+const app = document.querySelector('#app');
+
+ReactDOM.render(<IndecisonApp />, app);

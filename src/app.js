@@ -14,10 +14,22 @@ class IndecisonApp extends React.Component {
     }
     // Life Cycle methods 
     componentDidMount(){
-        console.log('componentDidMount');
+        // fetching data
+        try {
+            const json = localStorage.getItem('options');
+            const options = JSON.parse(json);
+            if(options) {
+                this.setState(() => ({ options }));
+            }
+        } catch (error) {
+            this.setState(() => ({error}));
+        }
     }
-    componentDidUpdate(){
-        console.log('componentDidUpdate');
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.options.length !== this.state.options.length){
+            const json = JSON.stringify(this.state.options);
+            localStorage.setItem('options', json);
+        }
     }
     componentWillUnmount(){
         console.log('componentWillUnmount');
@@ -25,6 +37,7 @@ class IndecisonApp extends React.Component {
     // handleDeleteOptions method for Options
     handleDeleteOptions(){
         this.setState(() => ({options: []}));
+        localStorage.removeItem('options');
     }
     // remove a single item
     handleDeleteOption(selectedOption){
@@ -88,6 +101,7 @@ const Action = (props) => {
 const Options = (props) => {
     return (
         <div>
+            { props.options.length === 0 && <p>Add an option to get started.</p>}
             { props.options.map((option) => (
                 <Option 
                     key={option} 
@@ -126,6 +140,10 @@ class AddOption extends React.Component {
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option);
         this.setState(() => ( {error: error} ));
+
+        if(!error){
+            e.target.elements.option.value = '';
+        }
     }
 
     render() {
@@ -144,4 +162,4 @@ class AddOption extends React.Component {
 
 const app = document.querySelector('#app');
 
-ReactDOM.render(<IndecisonApp options={['Devils Den', 'Omerta']}/>, app);
+ReactDOM.render(<IndecisonApp />, app);

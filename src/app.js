@@ -22,7 +22,7 @@ class IndecisonApp extends React.Component {
                 this.setState(() => ({ options }));
             }
         } catch (error) {
-            this.setState(() => ({error}));
+            // do nothing
         }
     }
     componentDidUpdate(prevProps, prevState){

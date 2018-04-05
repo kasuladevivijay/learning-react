@@ -11,6 +11,6 @@
   "author": "me",
   "license": "MIT",
   "scripts":{
-    "start": "babel --watch src/app.js --out-file=public/app.js --presets=env,react"
+    "start": "babel --watch src/es6-playground/counter-example.js --out-file=public/app.js --presets=env,react"
   }
 }

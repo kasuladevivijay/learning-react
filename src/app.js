@@ -13,11 +13,7 @@ class IndecisonApp extends React.Component {
     }
     // handleDeleteOptions method for Options
     handleDeleteOptions(){
-        this.setState(()=>{
-            return {
-                options: []
-            };
-        });
+        this.setState(() => ({options: []}));
     }
     // handlePick method for Action
     handlePick(){

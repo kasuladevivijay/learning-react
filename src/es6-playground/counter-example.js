@@ -9,7 +9,7 @@
         this.handleRemoveOne = this.handleRemoveOne.bind(this);
         this.reset = this.reset.bind(this);
         this.state = {
-            count: 0
+            count: props.count
         };
      }
     //  methods
@@ -48,6 +48,10 @@
          );
      }
  }
+
+ Counter.defaultProps = {
+     count: 0
+ };
 
  ReactDOM.render(<Counter />, document.querySelector('#app'));
 

@@ -20,7 +20,7 @@ var IndecisonApp = function (_React$Component) {
         _this.state = {
             title: 'Indecision',
             subtitle: 'Put your life in the hands of a computer.',
-            options: []
+            options: props.options
         };
         _this.handleDeleteOptions = _this.handleDeleteOptions.bind(_this);
         _this.handlePick = _this.handlePick.bind(_this);
@@ -80,10 +80,14 @@ var IndecisonApp = function (_React$Component) {
 
     return IndecisonApp;
 }(React.Component);
-// stateless Header component
+// Adding Default values to the state
 
 
-var Header = function Header(props) {
+IndecisonApp.defaultProps = {
+    options: []
+
+    // stateless Header component
+};var Header = function Header(props) {
     return React.createElement(
         'div',
         null,
@@ -200,4 +204,4 @@ var AddOption = function (_React$Component2) {
 
 var app = document.querySelector('#app');
 
-ReactDOM.render(React.createElement(IndecisonApp, null), app);
+ReactDOM.render(React.createElement(IndecisonApp, { options: ['Devils Den', 'Omerta'] }), app);

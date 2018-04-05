@@ -5,7 +5,7 @@ class IndecisonApp extends React.Component {
         this.state = {
             title: 'Indecision',
             subtitle: 'Put your life in the hands of a computer.',
-            options: []
+            options: props.options
         };
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handlePick = this.handlePick.bind(this);
@@ -49,6 +49,11 @@ class IndecisonApp extends React.Component {
         );
     }
 }
+// Adding Default values to the state
+IndecisonApp.defaultProps = {
+    options: []
+}
+
 // stateless Header component
 const Header = (props) =>{
     return (
@@ -121,4 +126,4 @@ class AddOption extends React.Component {
 
 const app = document.querySelector('#app');
 
-ReactDOM.render(<IndecisonApp />, app);
+ReactDOM.render(<IndecisonApp options={['Devils Den', 'Omerta']}/>, app);

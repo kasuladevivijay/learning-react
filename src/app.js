@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const template = React.createElement('p', {}, 'A paragraph');
+const template = <p>A paragaph using jsx</p>
 ReactDOM.render(template, document.querySelector('#app'));
